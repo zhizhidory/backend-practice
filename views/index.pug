@@ -1,0 +1,62 @@
+doctype html
+html
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(charset="utf-8" )
+        title 後端作業
+        style.
+            html{
+                min-height:100%;
+                margin:0;
+                padding:0;
+            }
+            body {
+                min-height:100vh;
+                margin:0;
+                display: flex;
+                justify-content: center;
+                
+            }
+            main{
+                min-height:100%;
+                width:70%;
+                border:1px solid gray;
+                padding:5px;
+                margin:5px;
+            }
+            form>div{
+                margin-top:5px
+            }
+            .messageContainer{
+                margin-top:5px;
+            }
+            .message{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                border-bottom:1px solid gray;
+                height:120px
+            }
+            img{
+                max-width:80px;
+                max-height:80px;
+                object-fit: cover;
+            }
+    body
+        main
+            h4(class="title") 發表一篇圖文
+            form(action="/" enctype="multipart/form-data" method="post") 
+                div 文字內容
+                    input(type="text" name="content")
+                div 圖片檔案
+                    input(type="file" accept="image/*" id="file-uploader" name="upload-img")
+                input(type="submit" value="送出")
+            hr
+            div(class="messageContainer")
+            each message in data
+                div(class="message")
+                    div= message.content 
+                    img(src=message.imageUrl)
+
+
+                
