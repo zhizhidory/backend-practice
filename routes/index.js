@@ -22,8 +22,8 @@ const profileUpload = multer({
     }
   })
 const s3 = new AWS.S3({
-    accessKeyId: process.env.accessKeyId,
-    secretAccessKey: process.env.secretAccessKey
+    accessKeyId: process.env.ACCESSKEYID,
+    secretAccessKey: process.env.SECRETACCESSKEY
 });
 
 const SELECTMessage = function() {
